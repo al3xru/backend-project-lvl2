@@ -1,0 +1,42 @@
+{
+  "author": "al3xru",
+  "bin": {
+    "nodejs-package": "bin/gendiff.js"
+  },
+  "bugs": {
+    "url": "https://github.com/al3xru/backend-project-lvl2/issues"
+  },
+  "description": "backend-project-lvl2",
+  "devDependencies": {
+    "@jest/globals": "^27.5.1",
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.0",
+    "jest": "^27.5.1",
+    "jest-cli": "^27.5.1",
+    "npm-check-updates": "^12.3.0",
+    "simple-git-hooks": "^2.7.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "homepage": "https://github.com/al3xru/backend-project-lvl2#readme",
+  "license": "ISC",
+  "name": "@hexlet/code",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al3xru/backend-project-lvl2.git"
+  },
+  "scripts": {
+    "test": "npx jest --bail"
+  },
+  "simple-git-hooks": {
+    "pre-push": "make lint"
+  },
+  "type": "module",
+  "version": "0.0.1",
+  "dependencies": {
+    "commander": "^9.0.0"
+  }
+}
