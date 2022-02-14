@@ -1,7 +1,7 @@
 {
   "author": "al3xru",
   "bin": {
-    "nodejs-package": "bin/gendiff.js"
+    "gendiff": "bin/gendiff.js"
   },
   "bugs": {
     "url": "https://github.com/al3xru/backend-project-lvl2/issues"
