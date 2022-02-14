@@ -9,5 +9,7 @@ export default () => {
     .description(' Compares two configuration files and shows a difference.')
     // .version(packageInfo.version)
     .version('0.0.1')
-    .parse(process.argv);
+    .arguments('<filepath1> <filepath2>')
+    .option('-f, --format <type>', 'output format')
+    .parse();
 };
