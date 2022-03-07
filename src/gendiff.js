@@ -1,15 +1,17 @@
 // @ts-check
 import { cwd } from 'process';
-import { resolve } from 'path';
+import { resolve, extname } from 'path';
 import { readFileSync } from 'fs';
 import _ from 'lodash';
+import parse from './parsers.js';
 
-const parse = (fileName) => {
-  const getPath = (file) => resolve(cwd(), file);
+const getPath = (file) => resolve(cwd(), file);
+const readFile = (file) => readFileSync(file);
+
+const getObject = (fileName) => {
   // TODO: check file exist
-  const readFile = (file) => readFileSync(file);
-  const getObject = (file) => JSON.parse(file);
-  return getObject(readFile(getPath(fileName)));
+  const fileType = extname(fileName);
+  return parse(readFile(getPath(fileName)), fileType);
 };
 
 const types = {
@@ -87,4 +89,4 @@ const show = (diffs) => {
   return output;
 };
 
-export default (file1, file2) => show(compare(parse(file1), parse(file2)));
+export default (file1, file2) => show(compare(getObject(file1), getObject(file2)));
